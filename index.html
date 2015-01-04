@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="APP">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/default.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/config.js"></script>
+    </head>
+
+    <body ng-controller="StoreCtrl">
+        <div class="container">
+            <div class="col-md-10">
+                <div class="col-md-4" ng-repeat="product in products">
+                    <div class="panel panel-success">
+                        <div class="panel-heading" title="In Stock">
+                            <span>{{ product.product_name }}</span>
+                            <span style="float:right;" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </div>
+                        <div class="panel-body">
+                            <img style="margin-left: auto; margin-right: auto; width: 90%;" class="thumbnail" src="{{ product.product_pic }}" alt="Product Image"/>
+                            {{ product.product_description }}
+
+                            <hr />
+                            <div class="row" style="height: 30px; line-height: 30px;">
+                                <div class="col-md-6">
+                                    <span style="font-size: 22px;">{{ product.product_price | currency:"R":2 }}</span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
